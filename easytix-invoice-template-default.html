@@ -192,11 +192,11 @@
                 <div class="row">
                     <div class="col company-details">
                         <h2>
-                            <span>{invoice.from.name or 'Company Name'}</span>
+                            <span>{data.from.name or 'Company Name'}</span>
                         </h2>
-                        <div>{invoice.from.address or 'Company Address'}</div>
-                        <div>{invoice.from.vatNumber or 'VAT number'}</div>
-                        <div><a href="|mailto:{invoice.from.email}|">{invoice.from.email}</a></div>
+                        <div>{data.from.address or 'Company Address'}</div>
+                        <div>{data.from.vatNumber or 'VAT number'}</div>
+                        <div><a href="|mailto:{data.from.email}|">{data.from.email}</a></div>
                     </div>
                 </div>
                 <div class="col invoice-header">
@@ -209,19 +209,19 @@
                 <div class="row contacts">
                     <div class="col invoice-to">
                         <div class="text-gray-light">INVOICE TO:</div>
-                        <h2 class="to">{invoice.to.name}</h2>
+                        <h2 class="to">{data.to.name}</h2>
                         <div class="address">
-                            {invoice.to.address or 'Client Address'}
+                            {data.to.address or 'Client Address'}
                         </div>
                         <div>
-                            VAT Number: {invoice.to.vatNumber or 'Client VAT Number'}
+                            VAT Number: {data.to.vatNumber or 'Client VAT Number'}
                         </div>
-                        <div class="email"><a href="|mailto:{invoice.to.email}|">{invoice.to.email}</a></div>
+                        <div class="email"><a href="|mailto:{data.to.email}|">{data.to.email}</a></div>
                     </div>
                     <div class="col invoice-details">
-                        <div class="date">Date of Invoice: {invoice.date or ''}</div>
-                        <div class="date">INVOICE# {invoice.id or ''}</div>
-                        <div class="date">Due Date: {invoice.due or ''}</div>
+                        <div class="date">Date of Invoice: {data.date or ''}</div>
+                        <div class="date">INVOICE# {data.id or ''}</div>
+                        <div class="date">Due Date: {data.due or ''}</div>
                     </div>
                 </div>
                 <div style="clear: both;"></div>
@@ -251,24 +251,24 @@
                     <tr>
                         <td colspan="2"></td>
                         <td colspan="2">Subtotal</td>
-                        <td>{invoice.subTotal or '0'}</td>
+                        <td>{data.subTotal or '0'}</td>
                     </tr>
                     <tr>
                         <td colspan="2"></td>
-                        <td colspan="2">Tax {invoice.taxRate or '0'}%</td>
-                        <td>{invoice.taxAmount or '0'}</td>
+                        <td colspan="2">Tax {data.taxRate or '0'}%</td>
+                        <td>{data.taxAmount or '0'}</td>
                     </tr>
                     <tr>
                         <td colspan="2"></td>
                         <td colspan="2">Grand Total</td>
-                        <td>{invoice.total or '0'}</td>
+                        <td>{data.total or '0'}</td>
                     </tr>
                     </tfoot>
                 </table>
                 <div class="thanks">Thank you!</div>
                 <div class="notices">
                     <div>Notes:</div>
-                    <div class="notice">{invoice.paymentInstructions or ''}</div>
+                    <div class="notice">{data.paymentInstructions or ''}</div>
                 </div>
                 <br/>
             </main>
