@@ -243,26 +243,26 @@ div.logo-container {
                         <tr th:each="itm : ${invoice.items}">
                             <td class="no" th:text="${itmStat.index + 1}"></td>
                             <td class="text-left" th:text="${itm.description}"></td>
-                            <td class="unit" th:text="${'$' + itm.unitPrice}"></td>
+                            <td class="unit" th:text="${invoice.currencySymbol + itm.unitPrice}"></td>
                             <td class="qty" th:text="${itm.quantity}"></td>
-                            <td class="total" th:text="${'$' + itm.totalPrice}"></td>
+                            <td class="total" th:text="${invoice.currencySymbol + itm.totalPrice}"></td>
                         </tr>
                     </tbody>
                     <tfoot>
                         <tr>
                             <td colspan="2"></td>
                             <td colspan="2">SUBTOTAL</td>
-                            <td th:text="${'$' + invoice.subTotal}"></td>
+                            <td th:text="${invoice.currencySymbol + invoice.subTotal}"></td>
                         </tr>
                         <tr>
                             <td colspan="2"></td>
                             <td colspan="2">TAX <th:block th:text="${invoice.taxRate}"></th:block>%</td>
-                            <td th:text="${'$' + invoice.taxAmount}"></td>
+                            <td th:text="${invoice.currencySymbol + invoice.taxAmount}"></td>
                         </tr>
                         <tr>
                             <td colspan="2"></td>
                             <td colspan="2">GRAND TOTAL</td>
-                            <td th:text="${'$' + invoice.total}"></td>
+                            <td th:text="${invoice.currencySymbol + invoice.total}"></td>
                         </tr>
                     </tfoot>
                 </table>
