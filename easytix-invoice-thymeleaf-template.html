@@ -215,8 +215,6 @@ div.logo-container {
                     </div>
                     <div class="col invoice-details">
                         <h1 class="invoice-id">INVOICE <th:block th:text="${invoice.id}"></th:block></h1>
-                        <div class="date">Date of Invoice: <th:block th:text="${#temporals.format(invoice.date, 'yyyy-MMM-dd')}"></th:block></div>
-                        <div class="date">Due Date: <th:block th:text="${#temporals.format(invoice.due, 'yyyy-MMM-dd')}"></th:block></div>
                     </div>
                 </div>
                 <table border="0" cellspacing="0" cellpadding="0">
