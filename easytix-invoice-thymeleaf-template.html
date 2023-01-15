@@ -201,11 +201,6 @@ div.logo-container {
                             <a th:unless="${#strings.isEmpty(invoice.from.website)}" th:href="${invoice.from.website}" th:text="${invoice.from.name}"></a>
                             <span th:if="${#strings.isEmpty(invoice.from.website)}" th:text="${invoice.from.name}"></span>
                         </h2>
-                        <div th:if="${invoice.from.address neq null}">
-                          <th:block th:with="addr = ${invoice.from.address}">
-                            <th:block th:text="${#strings.arrayJoin({addr.line1, addr.line2, addr.city, addr.state, addr.country, addr.zipCode}.{? #this neq null}, ', ')}"></th:block>
-                          </th:block>
-                        </div>
                         <div class="email" th:if="${not #strings.isEmpty(invoice.from.email)}"><a th:href="|mailto:${invoice.from.email}|" th:text="${invoice.from.email}"></a></div>
                     </div>
                 </div>
@@ -216,11 +211,6 @@ div.logo-container {
                     <div class="col invoice-to">
                         <div class="text-gray-light">INVOICE TO:</div>
                         <h2 class="to" th:text="${invoice.attention}">John Doe</h2>
-                        <div class="address" th:if="${invoice.to.address neq null}">
-                            <th:block th:with="addr = ${invoice.to.address}">
-                                <th:block th:text="${#strings.arrayJoin({addr.line1, addr.line2, addr.city, addr.state, addr.country, addr.zipCode}.{? #this neq null}, ', ')}"></th:block>
-                            </th:block>
-                        </div>
                         <div class="email" th:if="${not #strings.isEmpty(invoice.to.email)}"><a th:href="|mailto:${invoice.to.email}|" th:text="${invoice.to.email}"></a></div>
                     </div>
                     <div class="col invoice-details">
