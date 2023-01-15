@@ -230,7 +230,7 @@ div.logo-container {
                     </thead>
                     <tbody>
                         <tr th:each="itm, itmStat : ${invoice.items}">
-                            <td class="no" th:text="${itmStat.index + 1}"></td>
+                            <td class="no" th:text="${itmStat}"></td>
                             <td class="text-left" th:text="${itm.description}"></td>
                             <td class="unit" th:text="${invoice.currencySymbol + itm.unitPrice}"></td>
                             <td class="qty" th:text="${itm.quantity}"></td>
