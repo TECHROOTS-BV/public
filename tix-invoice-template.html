@@ -182,6 +182,10 @@
         div.logo-container {
             float: left;
         }
+        .logo {
+            width: 100px;
+            height: 100px;
+        }
     </style>
 </head>
 <body>
@@ -191,6 +195,7 @@
             <header>
                 <div class="row">
                     <div class="col company-details">
+                        <img src="{data.from.logoUrl}" alt="logo" class="logo"/>
                         <h2>
                             <span>{data.from.name or ''}</span>
                         </h2>
