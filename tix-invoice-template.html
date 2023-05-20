@@ -250,9 +250,9 @@
                     <tr>
                         <td class="no">{it_count}</td>
                         <td class="text-left">{it.description or ''}</td>
-                        <td class="unit">{it.unitPrice or '0'}</td>
+                        <td class="unit">{data.currencySymbol}{it.unitPrice or '0'}</td>
                         <td class="qty">{it.quantity or '0'}</td>
-                        <td class="total">{it.totalPrice or '0'}</td>
+                        <td class="total">{data.currencySymbol}{it.totalPrice or '0'}</td>
                     </tr>
                     {/each}
                     </tbody>
@@ -260,17 +260,17 @@
                     <tr>
                         <td colspan="2"></td>
                         <td colspan="2">Subtotal</td>
-                        <td>{data.subTotal or '0'}</td>
+                        <td>{data.currencySymbol}{data.subTotal or '0'}</td>
                     </tr>
                     <tr>
                         <td colspan="2"></td>
                         <td colspan="2">Tax {data.taxRate or '0'}%</td>
-                        <td>{data.taxAmount or '0'}</td>
+                        <td>{data.currencySymbol}{data.taxAmount or '0'}</td>
                     </tr>
                     <tr>
                         <td colspan="2"></td>
                         <td colspan="2">Grand Total</td>
-                        <td>{data.total or '0'}</td>
+                        <td>{data.currencySymbol}{data.total or '0'}</td>
                     </tr>
                     </tfoot>
                 </table>
