@@ -219,14 +219,16 @@
                         <div>
                             {data.to.address.line1 or ''}
                         </div>
+                        {#if data.to.vatNumber}
                         <div>
-                            VAT Number: {data.to.vatNumber or 'NA'}
+                            VAT Number: {data.to.vatNumber}
                         </div>
+                        {/if}
                         <div class="email"><a href="|mailto:{data.to.email}|">{data.to.email}</a></div>
                     </div>
                     <div class="col invoice-details">
-                        <div class="date">Date of Invoice: {data.date or ''}</div>
                         <div class="date">INVOICE# {data.id or ''}</div>
+                        <div class="date">Date of Invoice: {data.date or ''}</div>
                         {#if data.due}
                         <div class="date">Due Date: {data.due or ''}</div>
                         {/if}
