@@ -276,14 +276,20 @@
                     </tfoot>
                 </table>
                 <div class="thanks">Thank you!</div>
+                {#if data.paymentInstructions}
                 <div class="notices">
                     <div>Notes:</div>
-                    <div class="notice">{data.paymentInstructions or ''}</div>
+                    <div class="notice">{data.paymentInstructions}</div>
                 </div>
+                {/if}
                 <br/>
             </main>
             <footer>
-                Invoice was created on a computer and is valid without the signature and seal.
+                Tix (from TECHROOTS BV) is not the seller of the goods or services that this invoice relates to and acts only as a limited commercial agent on behalf of {data.from.name or ''}.
+                Your payment on this invoice are processed by Tix and paid directly to {data.from.name or ''} for the amounts concerned.
+                {data.from.name or ''} is obliged to provide the goods or services subjected to this invoice.
+                However, in carrying out its duties as limited commercial agent of {data.from.name or ''}, Tix (from TECHROOTS BV) assumes no
+                liability for any acts or omissions or otherwise in respect of {data.from.name or ''}.
             </footer>
         </div>
     </div>
