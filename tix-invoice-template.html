@@ -205,7 +205,7 @@
                     </div>
                 </div>
                 <div class="col invoice-header">
-                    <h1 class="invoice-id">INVOICE</h1>
+                    <h3 class="invoice-id">INVOICE</h3>
                 </div>
                 <div style="clear: both;"></div>
             </header>
@@ -226,7 +226,7 @@
                         <div class="email"><a href="|mailto:{data.to.email}|">{data.to.email}</a></div>
                     </div>
                     <div class="col invoice-details">
-                        <div class="date">INVOICE# {data.id or ''}</div>
+                        <div class="date">INVOICE# {data.invoiceNumber or ''}</div>
                         <div class="date">Date of Invoice: {data.date or ''}</div>
                         {#if data.due}
                         <div class="date">Due Date: {data.due or ''}</div>
@@ -264,7 +264,7 @@
                     </tr>
                     <tr>
                         <td colspan="2"></td>
-                        <td colspan="2">Tax {data.taxRate or '0'}%</td>
+                        <td colspan="2">Tax {data.vatPercentage or '0'}%</td>
                         <td>{data.currencySymbol}{data.taxAmount or '0'}</td>
                     </tr>
                     <tr>
