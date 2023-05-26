@@ -217,6 +217,9 @@
                         <div>
                             {data.to.address.line1 or ''}
                         </div>
+                        <div>
+                            {data.to.address.line2 or ''}
+                        </div>
                         {#if data.to.vatNumber}
                         <div>
                             VAT Number: {data.to.vatNumber}
