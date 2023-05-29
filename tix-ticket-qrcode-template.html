@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        #ticket {
+            padding: 0px;
+        }
+
+        .ticket {
+            position: relative;
+            padding: 15px
+        }
+
+        .ticket header {
+            padding: 10px 0;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #05bf62
+        }
+
+        .ticket .company-details {
+            text-align: left;
+            float: left;
+        }
+
+        .ticket .invoice-header {
+            text-align: right;
+        }
+
+        .ticket .qrcode {
+            text-align: center;
+            float: center;
+        }
+
+        footer {
+            width: 100%;
+            text-align: center;
+            color: #777;
+            padding: 8px 0
+        }
+
+        .logo {
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+<div id="ticket">
+    <div class="ticket">
+        <div>
+            <header>
+                <div class="row">
+                    <div class="col company-details">
+                        <img src="{data.logoUrl}" alt="logo" class="logo"/>
+                    </div>
+                </div>
+                <div class="col invoice-header">
+                    <h3 class="invoice-id">TICKET</h3>
+                </div>
+                <div style="clear: both;"></div>
+            </header>
+            <main>
+                <div class="qrcode">
+                    <img src="{data.qrCodeUrl}" alt="qrcode" class="qrcode"/>
+                </div>
+            </main>
+        </div>
+    </div>
+</div>
+</body>
+</html>
