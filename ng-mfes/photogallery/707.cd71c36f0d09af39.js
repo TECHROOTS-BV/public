@@ -1,0 +1,1 @@
+(self.webpackChunkphotogallery=self.webpackChunkphotogallery||[]).push([[707],{6707:(d,o,l)=>{l.r(o),l.d(o,{MFE_ROUTES:()=>h});const h=[{path:"admin",loadChildren:()=>Promise.all([l.e(635),l.e(93),l.e(359),l.e(737)]).then(l.bind(l,5737)).then(t=>t.PhotoGalleryAdminModule)},{path:"",component:l(9226).PhotoGallerySliderComponent}]}}]);
