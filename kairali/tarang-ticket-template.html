@@ -44,12 +44,12 @@
                 <th>Ticket Category</th>
                 <th>QR Code</th>
             </tr>
-            {#for ticket in data.tickets}
+            {#each data.tickets}
             <tr>
-                <td>{ticket.index}</td>
-                <td>{ticket.category}</td>
+                <td>{it_count}</td>
+                <td>{it.category}</td>
                 <td>
-                    <img src="data:image/png;base64,{ticket.qrCodeBase64}" alt="QR Code" height="100" width="100"/>
+                    <img src="data:image/png;base64,{it.qrCodeBase64}" alt="QR Code" height="100" width="100"/>
                 </td>
             </tr>
             {/for}
