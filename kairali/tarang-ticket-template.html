@@ -44,15 +44,15 @@
                 <th>Ticket Category</th>
                 <th>QR Code</th>
             </tr>
-            {#each data.tickets}
+            {#for ticket in data.tickets}
             <tr>
-                <td>{it_count}</td>
-                <td>{it.category}</td>
+                <td>{ticket_count}</td>
+                <td>{ticket.category}</td>
                 <td>
-                    <img src="data:image/png;base64,{it.qrCodeBase64}" alt="QR Code" height="100" width="100"/>
+                    <img src="data:image/png;base64,{ticket.qrCodeBase64}" alt="QR Code" height="100" width="100"/>
                 </td>
             </tr>
-            {/each}
+            {/for}
         </table>
 
         <p>Please bring a copy of this email or the QR codes to the event.</p>
