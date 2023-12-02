@@ -8,16 +8,19 @@
         .header { color: #333366; }
         .content { margin-top: 20px; }
         .footer { margin-top: 40px; font-size: small; color: grey; }
+        table { width: 100%; border-collapse: collapse; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
     </style>
 </head>
 <body>
     <div class="header">
-        <h1>Your Ticket Confirmation</h1>
+        <h1>Your Group Ticket Confirmation</h1>
     </div>
 
     <div class="content">
         <p>Hello {customerName}!</p>
-        <p>Thank you for your purchase. Below are the details of your ticket:</p>
+        <p>Thank you for your purchase. Below are the details of your group tickets:</p>
 
         <table>
             <tr>
@@ -32,14 +35,31 @@
                 <th>Location</th>
                 <td>{eventLocation}</td>
             </tr>
-            <tr>
-                <th>Ticket Number</th>
-                <td>{ticketNumber}</td>
-            </tr>
-            <!-- Add more details as necessary -->
         </table>
 
-        <p>Please bring a copy of this email or your ticket number to the event.</p>
+        <h3>Ticket Details</h3>
+        <table>
+            <tr>
+                <th>Sl.No</th>
+                <th>Ticket Category</th>
+                <th>QR Code</th>
+            </tr>
+            {#for ticket in tickets}
+            <tr>
+                <td>{ticket.index}</td>
+                <td>{ticket.category}</td>
+                <td>
+                    <!-- If using a URL -->
+                    <img src="{ticket.qrCodeUrl}" alt="QR Code" height="100" width="100"/>
+
+                    <!-- If using a Base64 string -->
+                    <!-- <img src="data:image/png;base64,{ticket.qrCodeBase64}" alt="QR Code" height="100" width="100"/> -->
+                </td>
+            </tr>
+            {/for}
+        </table>
+
+        <p>Please bring a copy of this email or the QR codes to the event.</p>
     </div>
 
     <div class="footer">
