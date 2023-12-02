@@ -16,8 +16,28 @@
     </div>
 
     <div class="content">
-        <p>Hello </p>
+        <p>Hello {customerName}!</p>
         <p>Thank you for your purchase. Below are the details of your ticket:</p>
+
+        <table>
+            <tr>
+                <th>Event</th>
+                <td>{eventName}</td>
+            </tr>
+            <tr>
+                <th>Date & Time</th>
+                <td>{eventDateTime}</td>
+            </tr>
+            <tr>
+                <th>Location</th>
+                <td>{eventLocation}</td>
+            </tr>
+            <tr>
+                <th>Ticket Number</th>
+                <td>{ticketNumber}</td>
+            </tr>
+            <!-- Add more details as necessary -->
+        </table>
 
         <p>Please bring a copy of this email or your ticket number to the event.</p>
     </div>
