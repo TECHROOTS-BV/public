@@ -15,6 +15,7 @@
 <body>
     <div class="header">
         <h1>Ticket Confirmation</h1>
+        <h5>Booking Reference: {data.bookingReference}</h5> 
     </div>
 
     <div class="content">
@@ -53,6 +54,7 @@
             <tr>
                 <td>{ticket_count}</td>
                 <td>{ticket.category}</td>
+                <td>{ticket.count}</td>
                 <td>
                     <img src="{ticket.qrCodeUrl}" alt="QR Code" height="100" width="100"/>
                 </td>
