@@ -15,7 +15,7 @@
 <body>
     <div class="header">
         <h1>Ticket Confirmation</h1>
-        <h5>Booking Reference: {data.bookingReference}</h5> 
+        <h3>Your Booking Reference: {data.bookingReference}</h3> 
     </div>
 
     <div class="content">
@@ -48,6 +48,7 @@
             <tr>
                 <th>Sl.No</th>
                 <th>Ticket Category</th>
+                <th>Ticket Count</th>
                 <th>QR Code</th>
             </tr>
             {#for ticket in data.tickets}
